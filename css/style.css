@@ -1,0 +1,128 @@
+body{ 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+  
+.container{ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+} 
+  
+.game-container{ 
+    width: 1200px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    row-gap: 15px; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+    background-image: linear-gradient(90deg, #fffbd5, #ccc); 
+} 
+  
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 карток по горизонталі */
+    grid-template-rows: repeat(4, 1fr); /* 4 картки по вертикалі */
+    grid-gap: 20px; /* Відстань між картками */
+    place-items: center; /* Вирівнювання по центру */
+}
+  
+.heading-container{ 
+    text-align: center; 
+} 
+  
+.gfg-heading{ 
+    color: #0E9D57; 
+} 
+  
+.card{ 
+    justify-items: center; 
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    cursor: pointer; 
+    perspective: 1000px; /* Для 3D ефекту перевертання */
+} 
+
+.card-inner {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.toggled .card-inner {
+    transform: rotateY(180deg);
+}
+  
+.outline-image, .card-image{ 
+    position: absolute; 
+    border-radius: 10px; 
+    top: 0; 
+    left: 0; 
+    height: 125px; 
+    width: 125px; 
+    backface-visibility: hidden; /* Приховує задню частину при перевертанні */
+} 
+
+.outline-image {
+    transform: rotateY(0deg);
+}
+  
+.card-image{ 
+    transform: rotateY(180deg);  
+} 
+  
+.progress-container{ 
+    text-align: center; 
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%; 
+    margin: 50px 0 20px 0; 
+} 
+  
+.move-counter{ 
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    border: 1px solid #ccc; 
+} 
+  
+.restart-button{ 
+    padding: 10px 20px; 
+    background-color: #0E9D57; 
+    border: none; 
+    border-radius: 25px; 
+    color: #fff; 
+    cursor: pointer; 
+} 
+  
+.restart-button:hover{ 
+    background-color: transparent; 
+    border: 1px solid #0E9D57; 
+    color: #0E9D57; 
+} 
+
+@media only screen and (max-width: 414px) { /* Медіа-запит для телефонів з шириною екрану до 414px */
+    .game-container {
+        width: 90%; /* Зменшуємо ширину ігрового контейнера для відповідності розміру екрану */
+        padding: 10px; /* Зменшуємо відступи */
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 картки по горизонталі */
+        grid-template-rows: repeat(7, 1fr); /* 7 карток по вертикалі */
+        grid-gap: 10px; /* Відстань між картками */
+    }
+
+    .card-inner, .outline-image, .card-image {
+        height: 50px; /* Зменшуємо розмір карток */
+        width: 50px;
+    }
+
+    .move-counter, .restart-button {
+        padding: 5px 10px; /* Зменшуємо розмір кнопок і лічильника */
+    }
+}

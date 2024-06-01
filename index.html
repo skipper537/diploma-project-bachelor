@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./css/style.css"> 
+    <title>Memory Card Game</title> 
+</head> 
+<body> 
+    <div class="container"> 
+        <div id="dynamic-cards" class="game-container"> 
+            <div class="heading-container"> 
+                <h1 class="gfg-heading">Memory Card Game</h1> 
+                <h2 class="game-heading">Click any card to flip it!</h2> 
+            </div> 
+            <div class="cards-container"> 
+                <!-- Картки будуть згенеровані динамічно за допомогою JavaScript -->
+            </div> 
+            <div class="progress-container"> 
+                <div class="move-counter">Moves: 0</div> 
+                <button id="restart" class="restart-button">Restart Game</button> 
+            </div> 
+        </div> 
+        <div id="win-message" class="win-message-container" style="display: none;"> 
+            <h1>Congratulations!!!</h1> 
+            <p id="win-moves">You won the game in X moves.</p> 
+            <button id="play-again" class="restart-button">Play Again</button> 
+        </div> 
+    </div> 
+    <script src="./js/script.js"></script> 
+</body> 
+</html>
